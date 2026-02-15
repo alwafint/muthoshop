@@ -32,12 +32,14 @@ export default function ProductCard({ product }: { product: any }) {
   return (
     <Link href={`/products/${product.id}`} className="group block h-full">
       <div className="bg-white h-full rounded-3xl border border-gray-100 p-4 hover:shadow-2xl hover:shadow-red-100 transition-all duration-300 flex flex-col relative overflow-hidden">
-        {product.stock <= 0 && (
-          <div className="absolute top-2 left-2 z-10 bg-gray-800 text-white text-[10px] px-2 py-1 rounded-lg font-bold">স্টক নেই</div>
-        )}
         <div className="aspect-square bg-gray-50 rounded-2xl mb-4 flex items-center justify-center relative overflow-hidden">
           {product.image_url && !imageError ? (
-            <img src={product.image_url} alt={product.name} className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" onError={() => setImageError(true)} />
+            <img 
+              src={product.image_url} 
+              alt={product.name} 
+              className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" 
+              onError={() => setImageError(true)} 
+            />
           ) : (
             <ShoppingBasket size={40} className="text-gray-200" />
           )}
@@ -51,7 +53,7 @@ export default function ProductCard({ product }: { product: any }) {
               <span className="text-[10px] text-gray-400 line-through">৳{product.price + 20}</span>
               <span className="text-xl font-black text-red-600 leading-none">৳{product.price}</span>
           </div>
-          <button onClick={handleAddToCart} disabled={product.stock <= 0 || isAdding} className="bg-red-50 text-red-600 p-3 rounded-2xl hover:bg-red-600 hover:text-white disabled:bg-gray-100 transition-all z-20">
+          <button onClick={handleAddToCart} disabled={isAdding} className="bg-red-50 text-red-600 p-3 rounded-2xl hover:bg-red-600 hover:text-white transition-all z-20">
             {isAdding ? <Loader2 size={24} className="animate-spin" /> : <Plus size={24} />}
           </button>
         </div>
