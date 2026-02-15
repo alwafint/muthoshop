@@ -1,0 +1,21 @@
+{
+  "name": "মুঠোশপ - হাতের মুঠোয় পণ্য",
+  "short_name": "মুঠোশপ",
+  "description": "সেরা দামে সেরা বাজার, এখন আপনার হাতের মুঠোয়।",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
