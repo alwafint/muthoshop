@@ -13,12 +13,12 @@ const nextConfig = {
 };
 
 const withPWA = withPWAInit({
-  dest: "public",       // সার্ভিস ওয়ার্কার কোথায় তৈরি হবে
+  dest: "public",
   cacheOnFrontEndNav: true,
   aggressiveFrontEndNavCaching: true,
   reloadOnOnline: true,
-  swcMinify: true,
-  disable: process.env.NODE_ENV === "development", // ডেভেলপমেন্ট মোডে PWA বন্ধ থাকবে
+  // swcMinify: true,  <-- এই লাইনটি মুছে ফেলা হয়েছে কারণ এটি এরর দিচ্ছিল
+  disable: process.env.NODE_ENV === "development",
   workboxOptions: {
     disableDevLogs: true,
   },
