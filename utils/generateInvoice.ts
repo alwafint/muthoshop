@@ -1,8 +1,9 @@
-import jsPDF from 'jspdf';
+import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 export const generateInvoice = (order: any, items: any[]) => {
-  const doc = jsPDF();
+  // এখানে 'new' কিওয়ার্ড যোগ করা হয়েছে
+  const doc = new jsPDF();
 
   // ১. হেডার ও লোগো
   doc.setFontSize(22);
